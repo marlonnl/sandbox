@@ -1,0 +1,34 @@
+//Guardando o joguinho do pedra, papel e tesoura do codecademy.
+// - Ainda não sei como parar a function quando o jogo empata. -
+
+var me = prompt("Do you choose rock, paper or scissors?");
+
+var game = function(me,pc) {
+  console.log("I choose" + " " + me + " and computer" + " " + pc + ".");
+
+	if (me === pc) { console.log("Result: draw. You both choose " + me + "."); }
+	
+	if (me === "rock" && pc === "paper") { var result = "loose"; }
+	if (me === "rock" && pc === "scissors") { var result = "win"; }
+	
+	if (me === "paper" && pc === "rock") { var result = "win"; }
+	if (me === "paper" && pc === "scissors") { var result = "loose"; }
+	
+	if (me === "scissors" && pc === "rock") { var result = "loose"; }
+	if (me === "scissors" && pc === "paper") { var result = "win"; }
+	
+	console.log("You " + result + " the game. You choose " + me + " and the computers choice was " + pc + ".");
+
+};
+
+var computerChoice = Math.random();
+
+if (computerChoice <= 0.33) {
+	computerChoice = "rock";
+} else if (computerChoice >= 0.67) {
+	computerChoice = "scissors";
+} else {
+	computerChoice = "paper";
+}
+
+game(me,computerChoice);
