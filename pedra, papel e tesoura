@@ -4,7 +4,8 @@
 var me = prompt("Do you choose rock, paper or scissors?");
 
 var game = function(me,pc) {
-  console.log("I choose" + " " + me + " and computer" + " " + pc + ".");
+
+//	console.log("I choose" + " " + me + " and computer" + " " + pc + ".");
 
 	if (me === pc) { console.log("Result: draw. You both choose " + me + "."); }
 	
