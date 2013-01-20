@@ -1,5 +1,4 @@
 //Guardando o joguinho do pedra, papel e tesoura do codecademy.
-// - Ainda não sei como parar a function quando o jogo empata. -
 
 var me = prompt("Do you choose rock, paper or scissors?");
 
