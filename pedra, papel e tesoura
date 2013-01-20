@@ -5,22 +5,25 @@ var me = prompt("Do you choose rock, paper or scissors?");
 
 var game = function(me,pc) {
 
-//	console.log("I choose" + " " + me + " and computer" + " " + pc + ".");
+	if (me === pc) { return "DRAW: nobody win."; }
+	
+	if (me === rock) {
+		if (pc == paper) { return "Computer (paper) WINS!"; }
+		else { return "You (rock) WIN!"; }
+	}
 
-	if (me === pc) { console.log("Result: draw. You both choose " + me + "."); }
-	
-	if (me === "rock" && pc === "paper") { var result = "loose"; }
-	if (me === "rock" && pc === "scissors") { var result = "win"; }
-	
-	if (me === "paper" && pc === "rock") { var result = "win"; }
-	if (me === "paper" && pc === "scissors") { var result = "loose"; }
-	
-	if (me === "scissors" && pc === "rock") { var result = "loose"; }
-	if (me === "scissors" && pc === "paper") { var result = "win"; }
-	
-	console.log("You " + result + " the game. You choose " + me + " and the computers choice was " + pc + ".");
+	if (me === paper) {
+		if (pc == scissors) { return "Computer (scissors) WINS!"; }
+		else { return "You (paper) WIN!"; }
+	}
 
-};
+	if (me === scissors) {
+		if (pc == rock) { return "Computer (rock) WINS!"; }
+		else { return "You (scissors) WIN!"; }
+	}
+
+}
+
 
 var computerChoice = Math.random();
 
@@ -32,4 +35,7 @@ if (computerChoice <= 0.33) {
 	computerChoice = "paper";
 }
 
+
 game(me,computerChoice);
+
+
